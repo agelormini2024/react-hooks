@@ -10,6 +10,7 @@ Este proyecto es una aplicación React moderna construida con TypeScript, Tailwi
 - **ESLint** configurado con reglas para React y TypeScript
 - Configuración de TypeScript con referencias de proyectos
 - Estructura de proyecto limpia y escalable
+- Tutorial paso a paso `./GUIA-REACT-TYPESCRIPT-TAILWIND-VITE.md`
 
 ## 📁 Estructura del proyecto
 
@@ -39,7 +40,7 @@ Este proyecto es una aplicación React moderna construida con TypeScript, Tailwi
 ├── tsconfig.app.json              # Config de TypeScript para la app
 ├── tsconfig.node.json             # Config de TypeScript para Node
 ├── vite.config.ts                 # Configuración de Vite
-└── guia-react-typescript-tailwind-vite.md  # Tutorial paso a paso
+└── GUIA-REACT-TYPESCRIPT-TAILWIND-VITE.md  # Tutorial paso a paso
 ```
 
 ## 🎯 Ejemplos incluidos
@@ -170,7 +171,7 @@ export default tseslint.config([
 - [Documentación de React](https://react.dev/)
 - [Documentación de TypeScript](https://www.typescriptlang.org/)
 - [Documentación de Tailwind CSS](https://tailwindcss.com/)
-- [Guía del proyecto](guia-react-typescript-tailwind-vite.md)
+- [Guía del proyecto](GUIA-REACT-TYPESCRIPT-TAILWIND-VITE.md)
 
 ---
 

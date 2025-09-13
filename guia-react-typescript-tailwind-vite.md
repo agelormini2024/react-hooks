@@ -35,8 +35,9 @@ npm install
 npm install tailwindcss @tailwindcss/vite
 ```
 ## Paso 5: Configure the Vite plugin
-## Agregar el plugin @tailwindcss/vite a su Vite configuration.
+## Agregar el plugin @tailwindcss/vite a su Vite configuration editando `vite.config.ts`
 ```javascript
+
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
@@ -61,65 +62,45 @@ export default defineConfig({
 ## Paso 6: Configurar TypeScript (opcional - mejoras adicionales)
 
 El proyecto ya viene con TypeScript configurado, pero puedes personalizar `tsconfig.json` si necesitas configuraciones específicas.
+Puedes encontrar información en: `[tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#handbook-content)`:
 
-### Configuración recomendada para `tsconfig.json`:
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-}
-```
 
 ## Paso 7: Probar la instalación
 
 ### 7.1 Modificar `src/App.tsx` para probar Tailwind
 
 ```tsx
-
+import 
 function App() {
-  return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-          ¡Hola React + TypeScript + Tailwind!
-        </h1>
-        <p className="text-gray-600 text-center mb-6">
-          Tu proyecto está configurado correctamente
-        </p>
-        <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300">
-          Botón de prueba
-        </button>
-      </div>
-    </div>
-  )
+    return (
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+            <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
+                <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">
+                    ¡Hola React + TypeScript + Tailwind!
+                </h1>
+                <p className="text-gray-600 text-center mb-6">
+                    Tu proyecto está configurado correctamente
+                </p>
+                <button
+                    className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+                    onClick={() => alert('¡Botón clickeado!')}
+                >
+                    Botón de prueba
+                </button>
+            </div>
+        </div>
+    )
 }
 
 export default App
-```
 
-### 7.2 Ejecutar el servidor de desarrollo
+```
+### 7.2 Borrar la carpeta `/src/assets` y el archivo `/src/App.css` (inecesarios para nuestra configuración) 
+
+
+App.css
+
+### 7.3 Ejecutar el servidor de desarrollo
 
 ```bash
 # Con npm
@@ -136,8 +117,6 @@ mi-proyecto-react/
 ├── public/
 │   └── vite.svg
 ├── src/
-│   ├── assets/
-│   ├── App.css
 │   ├── App.tsx
 │   ├── index.css
 │   ├── main.tsx
@@ -182,25 +161,6 @@ Crear `.prettierrc`:
   "tabWidth": 2,
   "trailingComma": "es5"
 }
-```
-
-### Alias de importación
-
-Si configuraste el `baseUrl` y `paths` en `tsconfig.json`, también actualiza `vite.config.ts`:
-
-```typescript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
-
-export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, './src')
-    }
-  }
-})
 ```
 
 ## ¡Listo!
