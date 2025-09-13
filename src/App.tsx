@@ -31,12 +31,15 @@ function App() {
                     </p>
                 </header>
 
-                {/* Tab de Navegación */}
-                <section className="flex flex-wrap justify-center gap-2 bg-white p-2 rounded-xl shadow-lg mb-8">
+                {/* Navegación Principal */}
+                <nav className="flex flex-wrap justify-center gap-2 bg-white p-2 rounded-xl shadow-lg mb-8" role="tablist" aria-label="Ejemplos de React Hooks">
                     {tabs.map(tab => (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
+                            role="tab"
+                            aria-selected={activeTab === tab.id}
+                            aria-controls={`panel-${tab.id}`}
                             className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeTab === tab.id
                                     ? 'bg-blue-500 text-white shadow-md transform scale-105'
                                     : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
@@ -45,10 +48,15 @@ function App() {
                             {tab.label}
                         </button>
                     ))}
-                </section>
+                </nav>
 
                 {/* Contenido */}
-                <main className="bg-white rounded-xl shadow-lg p-8">
+                <main 
+                    className="bg-white rounded-xl shadow-lg p-8"
+                    role="tabpanel"
+                    id={`panel-${activeTab}`}
+                    aria-labelledby={`tab-${activeTab}`}
+                >
                     <ActiveComponent />
                 </main>
 

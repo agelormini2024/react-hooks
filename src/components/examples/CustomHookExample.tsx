@@ -4,16 +4,18 @@ export default function CustomHookExample() {
     const { contador, incremento, decremento, reset } = useContador(0)
 
     return (
-        <>
-            <h3 className="text-xl font-bold mb-4 text-gray-800">
-                Custom Hook - useContador
-            </h3>
-            <p className="text-gray-600 mb-6">
-                Ejemplo de custom hook que encapsula la lógica del contador con useCallback
-                para optimizar el rendimiento. Perfecto para reutilizar en múltiples componentes.
-            </p>
+        <article>
+            <header>
+                <h2 className="text-xl font-bold mb-4 text-gray-800">
+                    Custom Hook - useContador
+                </h2>
+                <p className="text-gray-600 mb-6">
+                    Ejemplo de custom hook que encapsula la lógica del contador con useCallback
+                    para optimizar el rendimiento. Perfecto para reutilizar en múltiples componentes.
+                </p>
+            </header>
 
-            <section className="bg-gray-50 p-6 rounded-lg mb-6">
+            <main className="bg-gray-50 p-6 rounded-lg mb-6">
                 <div className="text-center">
                     <p className="text-3xl font-bold text-purple-600 mb-4">
                         Contador: {contador}
@@ -39,11 +41,11 @@ export default function CustomHookExample() {
                         </button>
                     </div>
                 </div>
-            </section>
+            </main>
 
             <section className="space-y-4">
-                <div className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
-                    <h4 className="text-white font-bold mb-2">📂 hooks/useContador.tsx</h4>
+                <article className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+                    <h3 className="text-white font-bold mb-2">📂 hooks/useContador.tsx</h3>
                     <pre className="text-sm">
                         {`import { useState, useCallback } from "react"
 
@@ -72,10 +74,10 @@ export function useContador(initialValue: number = 0): UseContadorReturn {
     return { contador, incremento, decremento, reset }
 }`}
                     </pre>
-                </div>
+                </article>
 
-                <div className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
-                    <h4 className="text-white font-bold mb-2">📝 Uso en componente</h4>
+                <article className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+                    <h3 className="text-white font-bold mb-2">📝 Uso en componente</h3>
                     <pre className="text-sm">
                         {`const { contador, incremento, decremento, reset } = useContador(0)
 
@@ -84,18 +86,18 @@ export function useContador(initialValue: number = 0): UseContadorReturn {
 <button onClick={decremento}>-</button>
 <button onClick={reset}>Reset</button>`}
                     </pre>
-                </div>
+                </article>
             </section>
 
-            <section className="bg-blue-50 border-l-4 border-blue-400 p-4 mt-4">
-                <h4 className="font-bold text-blue-800 mb-2">💡 Ventajas del Custom Hook:</h4>
+            <aside className="bg-blue-50 border-l-4 border-blue-400 p-4 mt-4">
+                <h3 className="font-bold text-blue-800 mb-2">💡 Ventajas del Custom Hook:</h3>
                 <ul className="text-blue-700 text-sm space-y-1">
                     <li>• <strong>Reutilización:</strong> Lógica encapsulada y reutilizable</li>
                     <li>• <strong>Performance:</strong> useCallback evita re-renders innecesarios</li>
                     <li>• <strong>Testeable:</strong> Fácil de testear por separado</li>
                     <li>• <strong>Mantenimiento:</strong> Lógica centralizada en un lugar</li>
                 </ul>
-            </section>
-        </>
+            </aside>
+        </article>
     )
 }

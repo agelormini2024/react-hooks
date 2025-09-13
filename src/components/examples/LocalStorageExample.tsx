@@ -9,19 +9,21 @@ export default function LocalStorageExample() {
     })
 
     return (
-        <div>
-            <h3 className="text-xl font-bold mb-4 text-gray-800">
-                useLocalStorage - Persistencia de Datos
-            </h3>
-            <p className="text-gray-600 mb-6">
-                Custom hook que persiste datos en localStorage automáticamente. 
-                Los valores se mantienen entre sesiones del navegador.
-            </p>
+        <article>
+            <header>
+                <h2 className="text-xl font-bold mb-4 text-gray-800">
+                    useLocalStorage - Persistencia de Datos
+                </h2>
+                <p className="text-gray-600 mb-6">
+                    Custom hook que persiste datos en localStorage automáticamente. 
+                    Los valores se mantienen entre sesiones del navegador.
+                </p>
+            </header>
             
             <div className="grid md:grid-cols-2 gap-6 mb-6">
                 {/* Contador Persistente */}
-                <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="font-bold text-gray-800 mb-3">Contador Persistente</h4>
+                <section className="bg-gray-50 p-6 rounded-lg">
+                    <h3 className="font-bold text-gray-800 mb-3">Contador Persistente</h3>
                     <p className="text-2xl font-bold text-orange-600 mb-4">
                         Contador: {storedCount}
                     </p>
@@ -45,11 +47,11 @@ export default function LocalStorageExample() {
                             Reset
                         </button>
                     </div>
-                </div>
+                </section>
 
                 {/* Input Persistente */}
-                <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="font-bold text-gray-800 mb-3">Input Persistente</h4>
+                <section className="bg-gray-50 p-6 rounded-lg">
+                    <h3 className="font-bold text-gray-800 mb-3">Input Persistente</h3>
                     <p className="text-sm text-gray-600 mb-3">
                         Nombre guardado: <span className="font-bold text-blue-600">{storedName || 'Sin nombre'}</span>
                     </p>
@@ -68,11 +70,11 @@ export default function LocalStorageExample() {
                             Limpiar
                         </button>
                     </div>
-                </div>
+                </section>
 
                 {/* Configuraciones */}
-                <div className="bg-gray-50 p-6 rounded-lg md:col-span-2">
-                    <h4 className="font-bold text-gray-800 mb-3">Configuraciones (Objeto)</h4>
+                <section className="bg-gray-50 p-6 rounded-lg md:col-span-2">
+                    <h3 className="font-bold text-gray-800 mb-3">Configuraciones (Objeto)</h3>
                     <div className="grid sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
                             <label className="block text-sm font-medium text-gray-700">
@@ -112,11 +114,11 @@ export default function LocalStorageExample() {
                             <strong>Config actual:</strong> {JSON.stringify(storedSettings, null, 2)}
                         </p>
                     </div>
-                </div>
+                </section>
             </div>
 
-            <div className="space-y-4">
-                <div className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+            <section className="space-y-4">
+                <article className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
                     <h4 className="text-white font-bold mb-2">📂 hooks/useLocalStorage.tsx</h4>
                     <pre className="text-sm">
 {`import { useState } from 'react'
@@ -147,9 +149,9 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
     return [storedValue, setValue] as const
 }`}
                     </pre>
-                </div>
+                </article>
 
-                <div className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+                <article className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
                     <h4 className="text-white font-bold mb-2">📝 Ejemplos de uso</h4>
                     <pre className="text-sm">
 {`// Diferentes tipos de datos
@@ -165,10 +167,10 @@ const [settings, setSettings] = useLocalStorage('settings', {
 setCount(prev => prev + 1)
 setSettings(prev => ({ ...prev, theme: 'dark' }))`}
                     </pre>
-                </div>
-            </div>
+                </article>
+            </section>
 
-            <div className="bg-green-50 border-l-4 border-green-400 p-4 mt-4">
+            <aside className="bg-green-50 border-l-4 border-green-400 p-4 mt-4">
                 <h4 className="font-bold text-green-800 mb-2">💡 Características:</h4>
                 <ul className="text-green-700 text-sm space-y-1">
                     <li>• <strong>Genérico:</strong> Funciona con cualquier tipo de dato</li>
@@ -177,15 +179,15 @@ setSettings(prev => ({ ...prev, theme: 'dark' }))`}
                     <li>• <strong>Function updater:</strong> Soporta funciones como setState</li>
                     <li>• <strong>Type-safe:</strong> TypeScript garantiza tipos correctos</li>
                 </ul>
-            </div>
+            </aside>
 
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+            <aside className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
                 <h4 className="font-bold text-yellow-800 mb-2">⚠️ Nota:</h4>
                 <p className="text-yellow-700 text-sm">
                     Los datos se guardan automáticamente en localStorage. 
                     Recarga la página para verificar que los valores se mantienen.
                 </p>
-            </div>
-        </div>
+            </aside>
+        </article>
     )
 }

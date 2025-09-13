@@ -24,16 +24,18 @@ export default function CombinedExample() {
     }
 
     return (
-        <div>
-            <h3 className="text-xl font-bold mb-4 text-gray-800">
-                Combinando Hooks - useContador + useLocalStorage
-            </h3>
-            <p className="text-gray-600 mb-6">
-                Ejemplo avanzado que combina múltiples custom hooks. 
-                Usar useContador para la lógica y useLocalStorage para la persistencia.
-            </p>
+        <article>
+            <header>
+                <h2 className="text-xl font-bold mb-4 text-gray-800">
+                    Combinando Hooks - useContador + useLocalStorage
+                </h2>
+                <p className="text-gray-600 mb-6">
+                    Ejemplo avanzado que combina múltiples custom hooks. 
+                    Usar useContador para la lógica y useLocalStorage para la persistencia.
+                </p>
+            </header>
             
-            <div className="bg-gray-50 p-6 rounded-lg mb-6">
+            <main className="bg-gray-50 p-6 rounded-lg mb-6">
                 <div className="text-center">
                     <div className="mb-4">
                         <p className="text-sm text-gray-600 mb-1">Valor del custom hook:</p>
@@ -68,11 +70,11 @@ export default function CombinedExample() {
                         </button>
                     </div>
                 </div>
-            </div>
+            </main>
 
-            <div className="space-y-4">
-                <div className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
-                    <h4 className="text-white font-bold mb-2">📝 Implementación</h4>
+            <section className="space-y-4">
+                <article className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+                    <h3 className="text-white font-bold mb-2">📝 Implementación</h3>
                     <pre className="text-sm">
 {`function CombinedExample() {
     // Hook para persistencia
@@ -110,10 +112,10 @@ export default function CombinedExample() {
     )
 }`}
                     </pre>
-                </div>
+                </article>
 
-                <div className="bg-red-50 border-l-4 border-red-400 p-4">
-                    <h4 className="font-bold text-red-800 mb-2">⚠️ Problema de Sincronización</h4>
+                <aside className="bg-red-50 border-l-4 border-red-400 p-4">
+                    <h3 className="font-bold text-red-800 mb-2">⚠️ Problema de Sincronización</h3>
                     <p className="text-red-700 text-sm mb-2">
                         Al combinar hooks, surge el problema de la sincronización. 
                         Los state updates son asíncronos en React:
@@ -123,10 +125,10 @@ export default function CombinedExample() {
                         <p className="text-red-600">incremento() // contador: 5 → 6 (pero no inmediato)</p>
                         <p className="text-red-600">setStoredCount(contador) // usa contador = 5 ❌</p>
                     </div>
-                </div>
+                </aside>
 
-                <div className="bg-green-50 border-l-4 border-green-400 p-4">
-                    <h4 className="font-bold text-green-800 mb-2">✅ Solución</h4>
+                <aside className="bg-green-50 border-l-4 border-green-400 p-4">
+                    <h3 className="font-bold text-green-800 mb-2">✅ Solución</h3>
                     <p className="text-green-700 text-sm mb-2">
                         Calcular el nuevo valor antes de los updates:
                     </p>
@@ -136,18 +138,18 @@ export default function CombinedExample() {
                         <p className="text-green-600">incremento() // actualiza hook</p>
                         <p className="text-green-600">setStoredCount(newValue) // usa valor calculado ✅</p>
                     </div>
-                </div>
+                </aside>
 
-                <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
-                    <h4 className="font-bold text-blue-800 mb-2">💡 Alternativas Mejores</h4>
+                <aside className="bg-blue-50 border-l-4 border-blue-400 p-4">
+                    <h3 className="font-bold text-blue-800 mb-2">💡 Alternativas Mejores</h3>
                     <ul className="text-blue-700 text-sm space-y-1">
                         <li>• <strong>useEffect:</strong> Sincronizar automáticamente los hooks</li>
                         <li>• <strong>Hook unificado:</strong> Crear un usePersistedCounter que maneje todo</li>
                         <li>• <strong>Reducer:</strong> Usar useReducer para lógica más compleja</li>
                         <li>• <strong>Context:</strong> Para estado global compartido</li>
                     </ul>
-                </div>
-            </div>
-        </div>
+                </aside>
+            </section>
+        </article>
     )
 }

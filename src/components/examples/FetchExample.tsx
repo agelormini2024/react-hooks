@@ -20,20 +20,22 @@ export default function FetchExample() {
     const { data: posts, loading: postsLoading, error: postsError, refetch: refetchPosts } = useFetch<Post[]>('https://jsonplaceholder.typicode.com/posts?_limit=5')
 
     return (
-        <div>
-            <h3 className="text-xl font-bold mb-4 text-gray-800">
-                useFetch - Peticiones HTTP
-            </h3>
-            <p className="text-gray-600 mb-6">
-                Custom hook para hacer peticiones HTTP con manejo de estados de loading, error y refetch.
-                Usa useEffect y useCallback para optimizar las peticiones.
-            </p>
+        <article>
+            <header>
+                <h2 className="text-xl font-bold mb-4 text-gray-800">
+                    useFetch - Peticiones HTTP
+                </h2>
+                <p className="text-gray-600 mb-6">
+                    Custom hook para hacer peticiones HTTP con manejo de estados de loading, error y refetch.
+                    Usa useEffect y useCallback para optimizar las peticiones.
+                </p>
+            </header>
             
             <div className="grid lg:grid-cols-2 gap-6 mb-6">
                 {/* Users */}
-                <div className="bg-gray-50 p-6 rounded-lg">
-                    <div className="flex justify-between items-center mb-4">
-                        <h4 className="font-bold text-gray-800">Usuarios</h4>
+                <section className="bg-gray-50 p-6 rounded-lg">
+                    <header className="flex justify-between items-center mb-4">
+                        <h3 className="font-bold text-gray-800">Usuarios</h3>
                         <button
                             onClick={refetchUsers}
                             disabled={usersLoading}
@@ -41,7 +43,7 @@ export default function FetchExample() {
                         >
                             {usersLoading ? 'Cargando...' : 'Refetch'}
                         </button>
-                    </div>
+                    </header>
                     
                     {usersLoading && (
                         <div className="text-center py-8">
@@ -66,12 +68,12 @@ export default function FetchExample() {
                             ))}
                         </div>
                     )}
-                </div>
+                </section>
 
                 {/* Posts */}
-                <div className="bg-gray-50 p-6 rounded-lg">
-                    <div className="flex justify-between items-center mb-4">
-                        <h4 className="font-bold text-gray-800">Posts Recientes</h4>
+                <section className="bg-gray-50 p-6 rounded-lg">
+                    <header className="flex justify-between items-center mb-4">
+                        <h3 className="font-bold text-gray-800">Posts Recientes</h3>
                         <button
                             onClick={refetchPosts}
                             disabled={postsLoading}
@@ -79,7 +81,7 @@ export default function FetchExample() {
                         >
                             {postsLoading ? 'Cargando...' : 'Refetch'}
                         </button>
-                    </div>
+                    </header>
                     
                     {postsLoading && (
                         <div className="text-center py-8">
@@ -104,11 +106,11 @@ export default function FetchExample() {
                             ))}
                         </div>
                     )}
-                </div>
+                </section>
             </div>
 
-            <div className="space-y-4">
-                <div className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+            <section className="space-y-4">
+                <article className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
                     <h4 className="text-white font-bold mb-2">📂 hooks/useFetch.tsx</h4>
                     <pre className="text-sm">
 {`import { useState, useEffect, useCallback } from 'react'
@@ -161,9 +163,9 @@ export function useFetch<T>(url: string): UseFetchReturn<T> {
     }
 }`}
                     </pre>
-                </div>
+                </article>
 
-                <div className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+                <article className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
                     <h4 className="text-white font-bold mb-2">📝 Uso del hook</h4>
                     <pre className="text-sm">
 {`interface User {
@@ -188,10 +190,10 @@ function MyComponent() {
     )
 }`}
                     </pre>
-                </div>
-            </div>
+                </article>
+            </section>
 
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mt-4">
+            <aside className="bg-blue-50 border-l-4 border-blue-400 p-4 mt-4">
                 <h4 className="font-bold text-blue-800 mb-2">💡 Características del useFetch:</h4>
                 <ul className="text-blue-700 text-sm space-y-1">
                     <li>• <strong>TypeScript genérico:</strong> Tipado automático del response</li>
@@ -201,16 +203,16 @@ function MyComponent() {
                     <li>• <strong>useCallback:</strong> Optimización para evitar loops infinitos</li>
                     <li>• <strong>Re-fetch automático:</strong> Se ejecuta cuando cambia la URL</li>
                 </ul>
-            </div>
+            </aside>
 
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+            <aside className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
                 <h4 className="font-bold text-yellow-800 mb-2">⚠️ Consideraciones:</h4>
                 <ul className="text-yellow-700 text-sm space-y-1">
                     <li>• Para apps reales, considera usar <strong>React Query</strong> o <strong>SWR</strong></li>
                     <li>• Este hook es básico, no incluye caché ni reintento automático</li>
                     <li>• Para múltiples peticiones, considera un hook más robusto</li>
                 </ul>
-            </div>
-        </div>
+            </aside>
+        </article>
     )
 }

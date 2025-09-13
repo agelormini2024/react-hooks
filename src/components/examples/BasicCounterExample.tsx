@@ -4,15 +4,17 @@ export default function BasicCounterExample() {
     const [count, setCount] = useState(0)
 
     return (
-        <>
-            <h3 className="text-xl font-bold mb-4 text-gray-800">
-                useState - Contador Básico
-            </h3>
-            <p className="text-gray-600 mb-6">
-                Ejemplo básico de useState sin persistencia. El estado se reinicia al recargar la página.
-            </p>
+        <article>
+            <header>
+                <h2 className="text-xl font-bold mb-4 text-gray-800">
+                    useState - Contador Básico
+                </h2>
+                <p className="text-gray-600 mb-6">
+                    Ejemplo básico de useState sin persistencia. El estado se reinicia al recargar la página.
+                </p>
+            </header>
 
-            <section className="bg-gray-50 p-6 rounded-lg mb-6">
+            <main className="bg-gray-50 p-6 rounded-lg mb-6">
                 <div className="text-center">
                     <p className="text-3xl font-bold text-blue-600 mb-4">
                         Contador: {count}
@@ -38,9 +40,10 @@ export default function BasicCounterExample() {
                         </button>
                     </div>
                 </div>
-            </section>
+            </main>
 
             <section className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+                <h3 className="text-white font-bold mb-2">📝 Código del useState</h3>
                 <pre className="text-sm">
                     {`const [count, setCount] = useState(0)
 
@@ -57,6 +60,6 @@ setCount(0)
 setCount(prev => prev + 1)`}
                 </pre>
             </section>
-        </>
+        </article>
     )
 }
