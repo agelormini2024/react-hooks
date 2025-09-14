@@ -171,8 +171,8 @@ export default tseslint.config([
 - [Documentación de React](https://react.dev/)
 - [Documentación de TypeScript](https://www.typescriptlang.org/)
 - [Documentación de Tailwind CSS](https://tailwindcss.com/)
-- [Guía del proyecto](GUIA-REACT-TYPESCRIPT-TAILWIND-VITE.md)
+- [Guía para la creación del proyecto](GUIA-REACT-TYPESCRIPT-TAILWIND-VITE.md)
 
 ---
 
-Comienza editando [`src/App.tsx`](src/App.tsx) para ver los cambios en tiempo real.
+Comienza editando [`src/App.tsx`](src/App.tsx)

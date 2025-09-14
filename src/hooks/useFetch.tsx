@@ -33,7 +33,7 @@ export function useFetch<T>(url: string): UseFetchReturn<T> {
             setState({
                 data: null,
                 loading: false,
-                error: error instanceof Error ? error.message : 'Unknown error'
+                error: error instanceof Error ? error.message : 'Error desconocido'
             })
         }
     }, [url])

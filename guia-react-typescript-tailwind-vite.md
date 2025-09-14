@@ -67,38 +67,7 @@ Puedes encontrar información en: `[tsconfig.json](https://www.typescriptlang.or
 
 ## Paso 7: Probar la instalación
 
-### 7.1 Modificar `src/App.tsx` para probar Tailwind
-
-```tsx
-import 
-function App() {
-    return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-            <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
-                <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-                    ¡Hola React + TypeScript + Tailwind!
-                </h1>
-                <p className="text-gray-600 text-center mb-6">
-                    Tu proyecto está configurado correctamente
-                </p>
-                <button
-                    className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
-                    onClick={() => alert('¡Botón clickeado!')}
-                >
-                    Botón de prueba
-                </button>
-            </div>
-        </div>
-    )
-}
-
-export default App
-
-```
 ### 7.2 Borrar la carpeta `/src/assets` y el archivo `/src/App.css` (inecesarios para nuestra configuración) 
-
-
-App.css
 
 ### 7.3 Ejecutar el servidor de desarrollo
 
@@ -165,7 +134,7 @@ Crear `.prettierrc`:
 
 ## ¡Listo!
 
-Tu proyecto React con TypeScript y Tailwind CSS usando Vite está completamente configurado y listo para el desarrollo. Puedes comenzar a crear componentes, añadir rutas, gestión de estado y más funcionalidades según las necesidades de tu aplicación.
+El proyecto React con TypeScript y Tailwind CSS usando Vite está completamente configurado y listo para el desarrollo. Puedes comenzar a crear componentes, añadir rutas, gestión de estado y más funcionalidades según las necesidades de tu aplicación.
 
 ## Recursos adicionales
 

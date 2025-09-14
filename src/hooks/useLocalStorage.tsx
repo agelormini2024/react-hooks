@@ -6,7 +6,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
             const item = window.localStorage.getItem(key);
             return item ? JSON.parse(item) : initialValue;
         } catch (error) {
-            console.error('Error reading from localStorage:', error);
+            console.error('Error leyendo desde localStorage:', error);
             return initialValue;
         }
     });
@@ -17,7 +17,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
             setStoredValue(valueToStore);
             window.localStorage.setItem(key, JSON.stringify(valueToStore));
         } catch (error) {
-            console.error('Error saving to localStorage:', error);
+            console.error('Error al escribir en localStorage:', error);
         }
     };
 
